@@ -20,9 +20,9 @@
 
 - (int) maxIntA:(int)a intB:(int)b {
     if ((int)a > (int)b) {
-        printf("%d", a);
+        return a;
     }else{
-        printf("%d",b);
+        return b;
     }
     // Implement the max function here
     return 0;
@@ -34,9 +34,10 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSLog(@"Exercise 1");
         Exercise1 *exercise1 = [[Exercise1 alloc] init];
-//        NSLog(@"%@ is the larger number of either 2 or 6", @([exercise1 maxIntA:2 intB:6]));
-//        NSLog(@"%@ is the larger number of either 9 or 2", @([exercise1 maxIntA:9 intB:2]));
+        //        NSLog(@"%@ is the larger number of either 2 or 6", @([exercise1 maxIntA:2 intB:6]));
+        //        NSLog(@"%@ is the larger number of either 9 or 2", @([exercise1 maxIntA:9 intB:2]));
         [exercise1 maxIntA:24 intB:13];
+        NSLog(@"%d", [exercise1 maxIntA:13 intB:24]);
         
     }
     return 0;
