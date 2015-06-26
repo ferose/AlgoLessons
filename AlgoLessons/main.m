@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Exercise1 : NSObject
+@interface Exercise : NSObject
 
 // Returns either a or b, whichever is higher
 - (int) maxIntA:(int)a intB:(int)b;
+- (BOOL) isLargerThan10:(int)a;
+- (BOOL) isOver1Digit:(int)a;
+- (int) numberOfDigitsInInt:(int)a;
 
 @end
 
 
-@implementation Exercise1
+@implementation Exercise
 
 - (int) maxIntA:(int)a intB:(int)b {
     if ((int)a > (int)b) {
@@ -24,7 +27,21 @@
     }else{
         return b;
     }
-    // Implement the max function here
+    return 0;
+}
+
+- (BOOL) isLargerThan10:(int)a {
+    // Fill in the code here, return the right value
+    return NO;
+}
+
+- (BOOL) isOver1Digit:(int)a {
+    // Fill in the code here, return the right value
+    return NO;
+}
+
+- (int) numberOfDigitsInInt:(int)a {
+    // Fill in the code here, return the right value
     return 0;
 }
 
@@ -32,13 +49,54 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        NSLog(@"Exercise 1");
-        Exercise1 *exercise1 = [[Exercise1 alloc] init];
-        //        NSLog(@"%@ is the larger number of either 2 or 6", @([exercise1 maxIntA:2 intB:6]));
-        //        NSLog(@"%@ is the larger number of either 9 or 2", @([exercise1 maxIntA:9 intB:2]));
-        [exercise1 maxIntA:24 intB:13];
-        NSLog(@"%d", [exercise1 maxIntA:13 intB:24]);
+        Exercise *exercise = [[Exercise alloc] init];
         
+//        NSLog(@"%@ is the larger number of either 2 or 6", @([exercise maxIntA:2 intB:6]));
+//        NSLog(@"%@ is the larger number of either 9 or 2", @([exercise maxIntA:9 intB:2]));
+//        [exercise maxIntA:24 intB:13];
+//        NSLog(@"%d", [exercise maxIntA:13 intB:24]);
+        
+        
+        NSLog(@"Testing your isLargerThan10 method");
+        
+        if ([exercise isLargerThan10:11]) {
+            NSLog(@"Your method thinks that 11 is larger than 10");
+        }
+        else {
+            NSLog(@"Your method thinks that 11 is not larger than 10");
+        }
+        
+        if ([exercise isLargerThan10:5]) {
+            NSLog(@"Your method thinks that 5 is larger than 10");
+        }
+        else {
+            NSLog(@"Your method thinks that 5 is not larger than 10");
+        }
+        
+        
+        NSLog(@" ");
+        NSLog(@"Testing your isOver1Digit method");
+
+        if ([exercise isOver1Digit:9]) {
+            NSLog(@"Your method thinks that 9 has more than 1 digits");
+        }
+        else {
+            NSLog(@"Your method thinks that 9 has 1 digit");
+        }
+        
+        if ([exercise isOver1Digit:25]) {
+            NSLog(@"Your method thinks that 25 has more than 1 digits");
+        }
+        else {
+            NSLog(@"Your method thinks that 25 has 1 digit");
+        }
+        
+        
+        NSLog(@" ");
+        NSLog(@"Testing your numberOfDigitsInInt method");
+        NSLog(@"123 has 3 digits, your method thinks it has %@ digits", @([exercise numberOfDigitsInInt:123]));
+        NSLog(@"18269 has 5 digits, your method thinks it has %@ digits", @([exercise numberOfDigitsInInt:18269]));
+        NSLog(@"0 has 1 digits, your method thinks it has %@ digits. Fun fact, no number can have 0 digits.", @([exercise numberOfDigitsInInt:0]));
     }
     return 0;
 }
