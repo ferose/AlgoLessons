@@ -12,8 +12,14 @@
 
 // Returns either a or b, whichever is higher
 - (int) maxIntA:(int)a intB:(int)b;
+
+// Returns true only if a is larger than 10
 - (BOOL) isLargerThan10:(int)a;
+
+// Returns true only when a has more than 1 digits
 - (BOOL) isOver1Digit:(int)a;
+
+// Returns the number of digits in a
 - (int) numberOfDigitsInInt:(int)a;
 
 @end
@@ -22,11 +28,7 @@
 @implementation Exercise
 
 - (int) maxIntA:(int)a intB:(int)b {
-    if ((int)a > (int)b) {
-        return a;
-    }else{
-        return b;
-    }
+    // Fill in the code here, return the right value
     return 0;
 }
 
@@ -51,12 +53,11 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Exercise *exercise = [[Exercise alloc] init];
         
-//        NSLog(@"%@ is the larger number of either 2 or 6", @([exercise maxIntA:2 intB:6]));
-//        NSLog(@"%@ is the larger number of either 9 or 2", @([exercise maxIntA:9 intB:2]));
-//        [exercise maxIntA:24 intB:13];
-//        NSLog(@"%d", [exercise maxIntA:13 intB:24]);
+        NSLog(@"Testing your maxIntA method");
+        NSLog(@"%@ is the larger number of either 2 or 6", @([exercise maxIntA:2 intB:6]));
+        NSLog(@"%@ is the larger number of either 9 or 2", @([exercise maxIntA:9 intB:2]));
         
-        
+        NSLog(@" ");
         NSLog(@"Testing your isLargerThan10 method");
         
         if ([exercise isLargerThan10:11]) {
